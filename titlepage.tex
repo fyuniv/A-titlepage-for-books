@@ -51,16 +51,21 @@
 
 \begin{titlepage}
 
-\tikz[remember picture,overlay] \node[opacity=0.3,inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{cover.pdf}};
-% \clearpage
-
+  % add background image
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[opacity=0.1, inner sep=0] at (current page.center)
+    {
+      \includegraphics[width=\paperwidth,height=\paperheight]{cover.pdf}
+    };
+  \end{tikzpicture}
 
   \centering
-  
-	{\scshape\Huge 现代统计图形 \par}
+  % title
+	{\scshape\Huge\bf 现代统计图形 \par}
   {\scshape\huge Modern Statistical Graphics\par}
   \vspace*{\baselineskip}
-	\vfill
+  \vfill
+  % authors
 	{\LARGE\itshape 
 	谢益辉\\
 	黄湘云\\
@@ -69,7 +74,7 @@
 }
 \vspace*{\baselineskip}
 \vfill
-
+% R codes for the background image
 \begin{lstlisting}
 par(mar = c(0.2, 0.2, 0.2, 0.2), mfrow = c(2, 2))
 for (n in c(63, 60, 76, 74)) {
@@ -93,7 +98,7 @@ for (n in c(63, 60, 76, 74)) {
   \vspace*{\baselineskip}
 \vfill
   \raggedleft
-  \includegraphics[width=0.25\textwidth]{QR-code.png}
+  \includegraphics[width=0.2\textwidth]{QR-code.png}
 
 \end{titlepage}
  
